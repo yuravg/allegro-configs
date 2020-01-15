@@ -1,0 +1,7 @@
+*,[0-9]
+*.geo
+*.geo,*
+*.mru
+allegro.ini
+my_favorites
+license_cache_allegro_*.txt
