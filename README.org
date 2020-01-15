@@ -1,0 +1,36 @@
+* allegro-configs
+
+My Environment variables for Cadence/Allegro
+
+This project has *pcbenv* directory that contains the configuration of Cadence/Allegro.
+This directory should be in your Home ($HOME) directory.
+
+Contents:
+
+- pcbenv/env - Local env File
+- pcbenv/view/ - visibility schema files
+
+For more information see Cadence Help:
+
+- Getting Started with Physical Design, part: Managing Environment Variables
+- Allegro Layout Editor Environment Variables Reference Product
+
+** Using
+*** Download project
+=git clone https://github.com/yuravg/allegro-configs.git= or [[https://github.com/yuravg/allegro-configs/archive/master.zip][zip-file]]
+
+*** Set path to Allegro library
+
+Add environment variable =ALLEGRO_LIB= to set path to library
+
+*** Copy or make link
+
+**** Copy
+Copy *pcbenv* directory to your Home ($HOME) directory
+
+**** Make link
+Run command from the project root directory:
+
+Windows: =mklink /D %HOME%\pcbenv %CD%\pcbenv=
+
+Linux: =ln -s `pwd`/pcbenv "$HOME"/pcbenv=
