@@ -1,0 +1,13 @@
+#  View replacement method:
+#  Complete
+
+color -globvis off
+color -vis "BOARD GEOMETRY/OUTLINE"
+color -vis "DRC ERROR CLASS/BOTTOM"
+color -vis "ETCH/BOTTOM"
+color -vis "PACKAGE GEOMETRY/SILKSCREEN_BOTTOM"
+color -vis "REF DES/SILKSCREEN_BOTTOM"
+color -vis "PIN/BOTTOM"
+color -vis "VIA CLASS/BOTTOM"
+color -vis "ANTI ETCH/BOTTOM"
+color -vis "PLAN/ALL"

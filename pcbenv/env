@@ -1,0 +1,72 @@
+# -*- mode: tcl; -*-
+
+# Cadence Allegro paths settings
+# For more information see: 'Allegro Layout Editor Environment Variables Reference Product'
+
+# Contents:
+#
+#  Initial
+#  Library
+#  View
+
+# * Initial
+# NOTE: Do not modify line one of the local env file. Line one contains the source command which
+# tells the system to read and execute all the information in the global environment file.
+#  For more information see: Getting Started with Physical Design/Managing Environment Variables
+source $TELENV
+
+# * Library
+
+# ALLEGRO_LIB - Environment variable
+ifvar ALLEGRO_LIB "set worklib_path $ALLEGRO_LIB" "set worklib_path ."
+
+set worklib_symbol $worklib_path/A
+set worklib_symbol $worklib_symbol $worklib_path/B
+set worklib_symbol $worklib_symbol $worklib_path/C
+set worklib_symbol $worklib_symbol $worklib_path/D
+set worklib_symbol $worklib_symbol $worklib_path/E
+set worklib_symbol $worklib_symbol $worklib_path/F
+set worklib_symbol $worklib_symbol $worklib_path/G
+set worklib_symbol $worklib_symbol $worklib_path/H
+set worklib_symbol $worklib_symbol $worklib_path/J
+set worklib_symbol $worklib_symbol $worklib_path/K
+set worklib_symbol $worklib_symbol $worklib_path/L
+set worklib_symbol $worklib_symbol $worklib_path/M
+set worklib_symbol $worklib_symbol $worklib_path/OTV
+set worklib_symbol $worklib_symbol $worklib_path/P
+set worklib_symbol $worklib_symbol $worklib_path/Q
+set worklib_symbol $worklib_symbol $worklib_path/R
+set worklib_symbol $worklib_symbol $worklib_path/S
+set worklib_symbol $worklib_symbol $worklib_path/STD
+set worklib_symbol $worklib_symbol $worklib_path/T
+set worklib_symbol $worklib_symbol $worklib_path/U
+set worklib_symbol $worklib_symbol $worklib_path/V
+set worklib_symbol $worklib_symbol $worklib_path/W
+set worklib_symbol $worklib_symbol $worklib_path/X
+set worklib_symbol $worklib_symbol $worklib_path/Y
+set worklib_symbol $worklib_symbol $worklib_path/Z
+
+set worklib_padstacks $worklib_path/PADSTACKS/Shape
+set worklib_padstacks $worklib_padstacks $worklib_path/PADSTACKS/Surfase-Mount
+set worklib_padstacks $worklib_padstacks $worklib_path/PADSTACKS/Through-Hole
+
+set psmpath $worklib_symbol
+set psmpath . symbols $worklib_symbol
+
+set padpath $worklib_padstacks
+set padpath . symbols $worklib_padstacks
+
+# * View
+# 'viewpath' - search path for visibility schema files (.color)
+set viewpath $viewpath $HOME/pcbenv/view
+
+
+# TIPS
+# - to show Alias/Funckey type on allegro command line: alias
+# - to debug problems type on allegro command line: scriptmode +echo
+
+### User Preferences section
+### This section is computer generated.
+### Please do not modify to the end of the file.
+### Place your hand edits above this section.
+###

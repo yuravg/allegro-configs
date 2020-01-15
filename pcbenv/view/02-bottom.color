@@ -1,0 +1,12 @@
+#  View replacement method:
+#  Complete
+
+color -globvis off
+color -vis "BOARD GEOMETRY/OUTLINE"
+color -vis "DRC ERROR CLASS/BOTTOM"
+color -vis "ETCH/BOTTOM"
+color -vis "PIN/BOTTOM"
+color -vis "ROUTE KEEPOUT/ALL"
+color -vis "VIA CLASS/BOTTOM"
+color -vis "ANTI ETCH/BOTTOM"
+color -vis "PLAN/ALL"
