@@ -6,6 +6,7 @@
 # Contents:
 #
 #  Initial
+#  Cadence Capture setup
 #  Library
 #  View
 #  Custom shortcuts
@@ -18,6 +19,11 @@
 # tells the system to read and execute all the information in the global environment file.
 #  For more information see: Getting Started with Physical Design/Managing Environment Variables
 source $TELENV
+
+# * Cadence Capture setup
+# Add XNet options for Cadence Capture Constraint manager: Tools/Options/Xnet
+# https://community.cadence.com/cadence_technology_forums/f/pcb-design/38866/export-physical-error/1355582
+set CDS_XNET_STATE_UI 1
 
 # * Library
 
