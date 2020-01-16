@@ -8,6 +8,10 @@
 #  Initial
 #  Library
 #  View
+#  Custom shortcuts
+#    Placement
+#    Filter
+#    Commands
 
 # * Initial
 # NOTE: Do not modify line one of the local env file. Line one contains the source command which
@@ -60,6 +64,31 @@ set padpath . symbols $worklib_padstacks
 # 'viewpath' - search path for visibility schema files (.color)
 set viewpath $viewpath $HOME/pcbenv/view
 
+# * Custom shortcuts
+
+# ** Placement
+# Rotate symbol
+funckey r iangle 90
+
+# Mirror symbol
+funckey l pop mirror
+
+# https://github.com/FEDEVEL/allegro-configs
+# Move symbol where you hover coursor
+funckey ms "prepopup;pop dyn_option_select 'Selection set@:@Clear all selections';FORM find all_off;FORM find symbols YES;done;etchedit;prepopup;pop dyn_option_select '@:@Move';move"
+funckey mv "prepopup;pop dyn_option_select 'Selection set@:@Clear all selections';FORM find all_off;FORM find vias YES;done;etchedit;prepopup;pop dyn_option_select '@:@Move';move"
+
+# ** Filter
+funckey s "FORM find all_off;FORM find symbols YES"
+funckey n "FORM find all_off;FORM find nets YES;"
+funckey p "FORM find all_off;FORM find pins YES;"
+funckey t "FORM find all_off;FORM find text YES;"
+funckey v "FORM find all_off;FORM find vias YES;"
+funckey c "FORM find all_off;FORM find cline_segs YES;"
+
+# ** Commands
+# '~G' alias: Control+g
+funckey ~G "done"
 
 # TIPS
 # - to show Alias/Funckey type on allegro command line: alias
