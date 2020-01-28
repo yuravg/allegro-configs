@@ -23,7 +23,9 @@ For more information see Cadence Help:
 
 Add environment variable =ALLEGRO_LIB= to set path to library
 
-*** Copy or make link
+*** Installation
+
+Installation methods: copy or make link or installation script
 
 **** Copy
 Copy *pcbenv* directory to your Home ($HOME) directory
@@ -34,3 +36,9 @@ Run command from the project root directory:
 Windows: =mklink /D %HOME%\pcbenv %CD%\pcbenv=
 
 Linux: =ln -s `pwd`/pcbenv "$HOME"/pcbenv=
+
+*** Installation script
+
+=install.ps1= - PowerShell(Windows OS)
+
+=install.sh= - Bash(GNU/Linux)
