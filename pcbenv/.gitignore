@@ -3,5 +3,5 @@
 *.geo,*
 *.mru
 allegro.ini
+license_cache_*.txt
 my_favorites
-license_cache_allegro_*.txt
