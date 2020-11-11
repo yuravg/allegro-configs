@@ -42,3 +42,9 @@ Linux: =ln -s `pwd`/pcbenv "$HOME"/pcbenv=
 =install.ps1= - PowerShell(Windows OS)
 
 =install.sh= - Bash(GNU/Linux)
+
+** Screenshot
+
+Visibility schema files
+
+[[file:images/colors_config.png]]
