@@ -1,3 +1,5 @@
+#!/usr/bin/env powershell
+
 # Installation script (PowerShell, Windows OS)
 #
 # it creates symbolic links in the HOME directory pointing to local files
