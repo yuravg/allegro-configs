@@ -5,6 +5,7 @@ color -globvis off
 color -vis "BOARD GEOMETRY/OUTLINE"
 color -vis "DRC ERROR CLASS/BOTTOM"
 color -vis "ETCH/BOTTOM"
+color -vis "PACKAGE GEOMETRY/ASSEMBLY_BOTTOM"
 color -vis "PACKAGE GEOMETRY/PLACE_BOUND_BOTTOM"
 color -vis "PIN/BOTTOM"
 color -vis "ROUTE KEEPOUT/ALL"
