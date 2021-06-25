@@ -12,6 +12,7 @@
 #  Custom shortcuts
 #    Placement
 #    Filter
+#    Find
 #    Commands
 
 # * Initial
@@ -91,6 +92,18 @@ funckey p "FORM find all_off;FORM find pins YES;"
 funckey t "FORM find all_off;FORM find text YES;"
 funckey v "FORM find all_off;FORM find vias YES;"
 funckey c "FORM find all_off;FORM find cline_segs YES;"
+
+# ** Find
+# https://community.cadence.com/cadence_technology_forums/f/ic-packaging-and-sip-design/45517/switching-layers-shortcut-in-apd-v17-2
+# https://www.parallel-systems.co.uk/wp-content/uploads/2020/02/PCB_Editor_Tips.pdf
+# Find by Query
+alias ~E "FORM find find_by_query"
+# Find Symbol
+alias ~F "prepopup;set prompt;prompt 'Find Ref Des';refdes $prompt;zoom selection"
+alias ~Q "FORM find name_type Symbol (or Pin);FORM find find_list Name;FORM find find_by_name"
+# Find Net
+alias ~N "prepopup;set prompt;prompt 'Find Net Name';net $prompt;zoom selection"
+alias ~W "FORM find name_type Net;FORM find find_list Name;FORM find find_by_name"
 
 # ** Commands
 # '~G' alias: Control+g
