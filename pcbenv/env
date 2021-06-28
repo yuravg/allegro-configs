@@ -122,6 +122,7 @@ alias ~W "FORM find name_type Net;FORM find find_list Name;FORM find find_by_nam
 
 # ** Commands
 funckey ~G "done"
+set enable_command_window_history
 
 # TIPS
 # - to show Alias/Funckey type on allegro command line: alias
