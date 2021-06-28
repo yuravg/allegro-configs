@@ -102,6 +102,7 @@ funckey p "FORM find all_off;FORM find pins YES;"
 funckey t "FORM find all_off;FORM find text YES;"
 funckey v "FORM find all_off;FORM find vias YES;"
 funckey c "FORM find all_off;FORM find cline_segs YES;"
+funckey e "FORM find all_off;FORM find shapes YES;"
 
 # ** Find
 # https://community.cadence.com/cadence_technology_forums/f/ic-packaging-and-sip-design/45517/switching-layers-shortcut-in-apd-v17-2
