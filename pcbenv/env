@@ -73,6 +73,10 @@ set padpath . symbols $worklib_padstacks
 set viewpath $viewpath $HOME/pcbenv/view
 
 # * Custom shortcuts
+# NOTE:
+# '~Char' should press 'Control Key' and 'Char'
+# 'SChar' should press 'Shift Key' and 'Char'
+
 # ** Layers
 # Show/Hide all Conductor layers
 alias ~1 "QtSignal CVPLayerGrid CVPAllConductors clicked true"
@@ -117,7 +121,6 @@ alias ~N "prepopup;set prompt;prompt 'Find Net Name';net $prompt;zoom selection"
 alias ~W "FORM find name_type Net;FORM find find_list Name;FORM find find_by_name"
 
 # ** Commands
-# '~G' alias: Control+g
 funckey ~G "done"
 
 # TIPS
