@@ -10,6 +10,7 @@
 #  Library
 #  View
 #  Custom shortcuts
+#    Layers
 #    Placement
 #    Filter
 #    Find
@@ -72,6 +73,15 @@ set padpath . symbols $worklib_padstacks
 set viewpath $viewpath $HOME/pcbenv/view
 
 # * Custom shortcuts
+# ** Layers
+# Show/Hide all Conductor layers
+alias ~1 "QtSignal CVPLayerGrid CVPAllConductors clicked true"
+alias ~2 "QtSignal CVPLayerGrid CVPAllConductors clicked false"
+alias ~3 "QtSignal CVPLayerGrid CVPAllPlanes clicked true"
+alias ~4 "QtSignal CVPLayerGrid CVPAllPlanes clicked false"
+
+# Shadow layers
+funckey h "shadow toggle"
 
 # ** Placement
 # Rotate symbol
