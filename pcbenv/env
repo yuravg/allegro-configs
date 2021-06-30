@@ -127,6 +127,10 @@ set enable_command_window_history
 # Exit from task
 funckey ~Q "pick grid 0 0"
 
+# Toggle echo of scripts
+alias echo_on "scriptmode +echo"
+alias echo_off "scriptmode -echo"
+
 # TIPS
 # - to show Alias/Funckey type on allegro command line: alias
 # - to debug problems type on allegro command line: scriptmode +echo
