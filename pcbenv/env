@@ -115,7 +115,7 @@ funckey e "FORM find all_off;FORM find shapes YES;"
 alias ~E "FORM find find_by_query"
 # Find Symbol
 alias ~F "prepopup;set prompt;prompt 'Find Ref Des';refdes $prompt;zoom selection"
-alias ~Q "FORM find name_type Symbol (or Pin);FORM find find_list Name;FORM find find_by_name"
+# alias ~Q "FORM find name_type Symbol (or Pin);FORM find find_list Name;FORM find find_by_name"
 # Find Net
 alias ~N "prepopup;set prompt;prompt 'Find Net Name';net $prompt;zoom selection"
 alias ~W "FORM find name_type Net;FORM find find_list Name;FORM find find_by_name"
@@ -123,6 +123,9 @@ alias ~W "FORM find name_type Net;FORM find find_list Name;FORM find find_by_nam
 # ** Commands
 funckey ~G "done"
 set enable_command_window_history
+
+# Exit from task
+funckey ~Q "pick grid 0 0"
 
 # TIPS
 # - to show Alias/Funckey type on allegro command line: alias
