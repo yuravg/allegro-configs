@@ -89,10 +89,11 @@ funckey h "shadow toggle"
 
 # ** Placement
 # Rotate symbol
-funckey r iangle 90
+funckey rr iangle 90
+funckey rl iangle -90
 
 # Mirror symbol
-funckey l pop mirror
+funckey mr pop mirror
 
 # https://github.com/FEDEVEL/allegro-configs
 # Move symbol where you hover coursor
