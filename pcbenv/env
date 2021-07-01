@@ -10,6 +10,7 @@
 #  Library
 #  View
 #  Custom shortcuts
+#    Move
 #    Layers
 #    Placement
 #    Filter
@@ -76,6 +77,15 @@ set viewpath $viewpath $HOME/pcbenv/view
 # NOTE:
 # '~Char' should press 'Control Key' and 'Char'
 # 'SChar' should press 'Shift Key' and 'Char'
+# The "button" command can be used to alias the Middle Mouse Wheel(wheel_up/wheel_down) to commands
+
+# ** Move
+# https://www.parallel-systems.co.uk/wp-content/uploads/2021/01/PCB_Editor_Tips.pdf
+# Move the design across the working area
+button Cwheel_up "roam y -$roamInc"
+button Cwheel_down "roam y $roamInc"
+button Swheel_up "roam x -$roamInc"
+button Swheel_down "roam x $roamInc"
 
 # ** Layers
 # Show/Hide all Conductor layers
@@ -83,6 +93,9 @@ alias ~1 "QtSignal CVPLayerGrid CVPAllConductors clicked true"
 alias ~2 "QtSignal CVPLayerGrid CVPAllConductors clicked false"
 alias ~3 "QtSignal CVPLayerGrid CVPAllPlanes clicked true"
 alias ~4 "QtSignal CVPLayerGrid CVPAllPlanes clicked false"
+
+button SCwheel_up subclass --
+button SCwheel_down subclass -+
 
 # Shadow layers
 funckey h "shadow toggle"
