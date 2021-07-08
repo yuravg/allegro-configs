@@ -1,0 +1,19 @@
+;;; -*- mode: lisp -*-
+
+;;; File allegro.ilinit: Allegro SKILL init file
+
+;; This script loads the Allegro SKILL files in the path specified in the 'pathToSkillDir'
+;; variable.
+;; 'ShowSkillFiles' variable let you see the loading of SKILL files in Command window,
+;; this variable can be defined in the env file.
+;; <cdsroot>/doc/algroskill/01ovrvew.html#pgfId-69599 - Allegro SKILL Reference
+;;   (<cdsroot> path to Allegro, for example C:/Cadence/SPB_17.2)
+
+(unless (boundp 'ShowSkillFiles)
+  ShowSkillFiles = axlGetVariable("ShowSkillFiles"))
+
+(let ((pathToSkillDir "./skill/"))  ;; relative path from current 'pcbenv' directory
+  (foreach file (rexMatchList "\\.il$" (getDirFiles pathToSkillDir))
+           (when ShowSkillFiles
+             (printf "fname: %s\n" file))
+           (load strcat(pathToSkillDir file))))
