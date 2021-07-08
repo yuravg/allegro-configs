@@ -9,11 +9,17 @@ Contents:
 
 - pcbenv/env - Local env File
 - pcbenv/view/ - visibility schema files
+- [[file:pcbenv/allegro.ilinit]] - Allegro SKILL init file
+- pcbenv/skill - SKILL script files
+  - [[file:pcbenv/skill/etch_visible.il]] - Change the visibility of Etch Cadence Allegro layers
 
 For more information see Cadence Help:
 
 - Getting Started with Physical Design, part: Managing Environment Variables
 - Allegro Layout Editor Environment Variables Reference Product
+- Allegro SKILL
+  - Allegro SKILL Reference (<cdsroot>/doc/algroskill/algroskillTOC.html from Cadence Allegro Help)
+  - [[https://cpb-us-w2.wpmucdn.com/sites.gatech.edu/dist/0/367/files/2016/03/Intro_to_skill_prog.pdf][SKILL Language User Guide]]
 
 ** Using
 *** Download project
