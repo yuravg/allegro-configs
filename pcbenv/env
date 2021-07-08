@@ -89,11 +89,30 @@ button Swheel_up "roam x -$roamInc"
 button Swheel_down "roam x $roamInc"
 
 # ** Layers
-# Show/Hide all Conductor layers
-alias ~1 "QtSignal CVPLayerGrid CVPAllConductors clicked true"
-alias ~2 "QtSignal CVPLayerGrid CVPAllConductors clicked false"
-alias ~3 "QtSignal CVPLayerGrid CVPAllPlanes clicked true"
-alias ~4 "QtSignal CVPLayerGrid CVPAllPlanes clicked false"
+
+# SKILL scripts
+# Toggle visibility for Etch layers
+funckey 1 "toggle_number_visible 1"
+funckey 2 "toggle_number_visible 2"
+funckey 3 "toggle_number_visible 3"
+funckey 4 "toggle_number_visible 4"
+funckey 5 "toggle_number_visible 5"
+funckey 6 "toggle_number_visible 6"
+funckey 7 "toggle_number_visible 7"
+funckey 8 "toggle_number_visible 8"
+funckey 9 "toggle_number_visible 9"
+funckey 0 "toggle_number_visible 10"
+funckey ~1 "toggle_number_visible 11"
+funckey ~2 "toggle_number_visible 12"
+funckey ~3 "toggle_number_visible 13"
+funckey ~4 "toggle_number_visible 14"
+funckey ~5 "toggle_number_visible 15"
+funckey ~6 "toggle_number_visible 16"
+# Toggle all Conductor and Plane Etch layers
+funckey ]  toggle_conductor_layers
+funckey ~] toggle_conductor_layers
+funckey \  toggle_plane_layers
+funckey ~\ toggle_plane_layers
 
 button SCwheel_up subclass --
 button SCwheel_down subclass -+
@@ -151,6 +170,9 @@ funckey ~Q "pick grid 0 0"
 # Toggle echo of scripts
 alias echo_on "scriptmode +echo"
 alias echo_off "scriptmode -echo"
+
+# Set variable ShowSkillFiles to see loading SKILL files
+# set ShowSkillFiles
 
 # TIPS
 # - to show Alias/Funckey type on allegro command line: alias
