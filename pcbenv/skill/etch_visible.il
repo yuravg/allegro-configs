@@ -1,7 +1,7 @@
 ;;; -*- mode: lisp -*-
 
 ;; SKILL File: etch_visible.il
-;; Version: 20210709.1036
+;; Version: 20210721.1026
 ;; Description: Change the visibility of Etch Cadence Allegro layers
 
 ;; Author  : Yuriy Gritsenko
@@ -22,6 +22,13 @@
 ;;   toggle_number_visible   - Toggle the visibility of the Etch layer by its NUMBER in the cross section
 ;;   toggle_conductor_layers - Toggle the visibility of all 'Conductor' layers
 ;;   toggle_plane_layers     - Toggle the visibility of all 'PLANE' layers
+
+;; TODO:
+;; - rename lv alias to tv (toggle layer)
+;; - add command lv for any layer names and visible value
+;; - make command 'etch_list' available via Allegro command
+;; - add Allegro commands to make all layers visible/invisible
+;; - add error handler if launch 'toggle_number_visible' for unavailable layer
 
 ;; How To Execute:
 ;;   Command> etch_visible TOP t
