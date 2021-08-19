@@ -1,7 +1,7 @@
 ;;; -*- mode: lisp -*-
 
 ;; SKILL File: etch_visible.il
-;; Version: 20210721.1026
+;; Version: 20210819.1223
 ;; Description: Change the visibility of Etch Cadence Allegro layers
 
 ;; Author  : Yuriy Gritsenko
@@ -28,7 +28,6 @@
 ;; - add command lv for any layer names and visible value
 ;; - make command 'etch_list' available via Allegro command
 ;; - add Allegro commands to make all layers visible/invisible
-;; - add error handler if launch 'toggle_number_visible' for unavailable layer
 
 ;; How To Execute:
 ;;   Command> etch_visible TOP t
@@ -95,18 +94,21 @@ axlCmdRegister("lv" 'toggle_number_visible ?cmdType "general")
 
 ;; Set VISIBLE for Etch LAYER_NAME
 (defun _set_etch_visible (layer_name visible verbosity)
-  (let ((class_name '("DRC ERROR CLASS"
-                      "ETCH"
-                      "PIN"
-                      "VIA CLASS"
-                      "ANTI ETCH")))
-    (foreach i class_name
-             (setq i (strcat i "/" layer_name))
-             (axlVisibleLayer i visible)))
-  (if verbosity
-      (printf "Etch '%s' %s"
-              layer_name
-              (if visible "visible" "invisible"))))
+  (if (stringp layer_name)
+      (progn
+        (let ((class_name '("DRC ERROR CLASS"
+                            "ETCH"
+                            "PIN"
+                            "VIA CLASS"
+                            "ANTI ETCH")))
+          (foreach i class_name
+                   (setq i (strcat i "/" layer_name))
+                   (axlVisibleLayer i visible)))
+        (if verbosity
+            (printf "Etch '%s' %s"
+                    layer_name
+                    (if visible "visible" "invisible"))))
+    (printf "Warning: can not find Etch!")))
 
 ;; Set VISIBLE for Etch LAYER_NAME
 ;; (Update the window for use from 'Command' windows)
@@ -128,10 +130,11 @@ axlCmdRegister("lv" 'toggle_number_visible ?cmdType "general")
 
 ;; Returns the visibility (t/nil) of the Etch layer NAME
 (defun _etch_is_visible (name)
-  (axlIsVisibleLayer
-   (strcat "ETCH"  ; Class
-           "/"
-           name))) ; Subclass
+  (if (stringp name) ; Check the type to prevent: *Error* strcat: argument #3 should be either a string or a symbol (type template = "S") - nil
+      (axlIsVisibleLayer
+       (strcat "ETCH"   ; Class
+               "/"
+               name)))) ; Subclass
 
 ;; Returns the visibility (t/nil) of the Etch layer by its NUMBER in the cross section
 (defun _etch_is_number_visible (number)
