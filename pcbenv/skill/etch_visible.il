@@ -1,7 +1,7 @@
 ;;; -*- mode: lisp -*-
 
 ;; SKILL File: etch_visible.il
-;; Version: 20210819.1223
+;; Version: 20210819.1242
 ;; Description: Change the visibility of Etch Cadence Allegro layers
 
 ;; Author  : Yuriy Gritsenko
@@ -22,11 +22,11 @@
 ;;   toggle_number_visible   - Toggle the visibility of the Etch layer by its NUMBER in the cross section
 ;;   toggle_conductor_layers - Toggle the visibility of all 'Conductor' layers
 ;;   toggle_plane_layers     - Toggle the visibility of all 'PLANE' layers
+;;   etch_list               - Displaying Etch layer names
 
 ;; TODO:
 ;; - rename lv alias to tv (toggle layer)
 ;; - add command lv for any layer names and visible value
-;; - make command 'etch_list' available via Allegro command
 ;; - add Allegro commands to make all layers visible/invisible
 
 ;; How To Execute:
@@ -38,12 +38,14 @@
 ;;   Command> toggle_number_visible 1
 ;;   Command> toggle_conductor_layers
 ;;   Command> toggle_plane_layers
+;;   Command> etch_list
 ;;   Command> skill toggle_visible "TOP"
 ;;   Command> skill etch_visible "TOP" t
 ;;   Command> skill etch_visible "TOP" nil
 ;;   Command> skill etch_number_visible 2 t
 ;;   Command> skill etch_number_visible 2 nil
 ;;   Command> skill toggle_number_visible 1
+;;   Command> skill etch_list
 
 axlCmdRegister("etch_visible" 'etch_visible ?cmdType "general")
 axlCmdRegister("etch_number_visible" 'etch_number_visible ?cmdType "general")
@@ -51,6 +53,7 @@ axlCmdRegister("toggle_visible" 'toggle_visible ?cmdType "general")
 axlCmdRegister("toggle_number_visible" 'toggle_number_visible ?cmdType "general")
 axlCmdRegister("toggle_conductor_layers" 'toggle_conductor_layers ?cmdType "general")
 axlCmdRegister("toggle_plane_layers" 'toggle_plane_layers ?cmdType "general")
+axlCmdRegister("etch_list" 'etch_list ?cmdType "general")
 
 ;; Alias 'lv' abbreviation from 'Layer Visible'
 ;; How To Execute:
@@ -86,7 +89,7 @@ axlCmdRegister("lv" 'toggle_number_visible ?cmdType "general")
   (let ((index 1))
     (foreach etch_name (_get_etch_list)
              (printf "etch %02d: %s\n" (index++) etch_name))
-    t))
+    t)) ; 'return t' to prevent message as ("TOP"..."BOTTOM") for run via 'Command> skill etch_list'
 
 ;; Return the name of the Etch layer by serial number in the cross section
 (defun _ethc_number2name (number)
