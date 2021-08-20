@@ -7,8 +7,8 @@ This directory should be in your Home ($HOME) directory.
 
 Contents:
 
-- pcbenv/env - Local env File
-- pcbenv/view/ - visibility schema files
+- [[file:pcbenv/env]] - Local env File
+- [[file:pcbenv/view/]] - visibility schema files
 - [[file:pcbenv/allegro.ilinit]] - Allegro SKILL init file
 - pcbenv/skill - SKILL script files
   - [[file:pcbenv/skill/etch_visible.il]] - Change the visibility of Etch Cadence Allegro layers
