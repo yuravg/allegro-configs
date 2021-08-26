@@ -1,7 +1,7 @@
 ;;; -*- mode: lisp -*-
 
 ;; SKILL File: etch_visible.il
-;; Version: 20210819.1242
+;; Version: 20210826.1238
 ;; Description: Change the visibility of Etch Cadence Allegro layers
 
 ;; Author  : Yuriy Gritsenko
@@ -168,7 +168,8 @@ axlCmdRegister("lv" 'toggle_number_visible ?cmdType "general")
                  (setq visible nil)))
     (foreach layer layer_list
              (_set_etch_visible layer visible nil))
-    (printf "Conductor Etch layers %s"
+    (printf "All %s layers are %s"
+            (lowerCase type)
             (if visible "visible" "invisible")))
   (axlVisibleUpdate t))
 
