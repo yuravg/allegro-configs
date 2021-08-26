@@ -1,7 +1,7 @@
 ;;; -*- mode: lisp -*-
 
 ;; SKILL File: etch_visible.il
-;; Version: 20210826.1427
+;; Version: 20210826.1614
 ;; Description: Change the visibility of Etch Cadence Allegro layers
 
 ;; Author  : Yuriy Gritsenko
@@ -89,8 +89,16 @@ axlCmdRegister("lv" 'toggle_number_visible ?cmdType "general")
 ;; Displaying Etch layer names
 (defun etch_list ()
   (let ((index 1))
-    (foreach etch_name (_get_etch_list)
-             (printf "etch %02d: %s\n" (index++) etch_name))
+    (foreach layer (_get_etch_list)
+             (printf "%02d: %s   %s\n"
+                     (index++)
+                     layer
+                     (if (eq (strcmp (axlDBGetLayerType layer)
+                                     "PLANE")
+                             0)
+                         "(plane)"
+                       "")
+                     ))
     t)) ; 'return t' to prevent message as ("TOP"..."BOTTOM") for run via 'Command> skill etch_list'
 
 ;; Return the name of the Etch layer by serial number in the cross section
