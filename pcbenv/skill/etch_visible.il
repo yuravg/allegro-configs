@@ -1,7 +1,7 @@
 ;;; -*- mode: lisp -*-
 
 ;; SKILL File: etch_visible.il
-;; Version: 20210826.1238
+;; Version: 20210826.1427
 ;; Description: Change the visibility of Etch Cadence Allegro layers
 
 ;; Author  : Yuriy Gritsenko
@@ -22,12 +22,12 @@
 ;;   toggle_number_visible   - Toggle the visibility of the Etch layer by its NUMBER in the cross section
 ;;   toggle_conductor_layers - Toggle the visibility of all 'Conductor' layers
 ;;   toggle_plane_layers     - Toggle the visibility of all 'PLANE' layers
+;;   toggle_layers           - Toggle the visibility of all layers
 ;;   etch_list               - Displaying Etch layer names
 
 ;; TODO:
 ;; - rename lv alias to tv (toggle layer)
 ;; - add command lv for any layer names and visible value
-;; - add Allegro commands to make all layers visible/invisible
 
 ;; How To Execute:
 ;;   Command> etch_visible TOP t
@@ -38,6 +38,7 @@
 ;;   Command> toggle_number_visible 1
 ;;   Command> toggle_conductor_layers
 ;;   Command> toggle_plane_layers
+;;   Command> toggle_layers
 ;;   Command> etch_list
 ;;   Command> skill toggle_visible "TOP"
 ;;   Command> skill etch_visible "TOP" t
@@ -53,6 +54,7 @@ axlCmdRegister("toggle_visible" 'toggle_visible ?cmdType "general")
 axlCmdRegister("toggle_number_visible" 'toggle_number_visible ?cmdType "general")
 axlCmdRegister("toggle_conductor_layers" 'toggle_conductor_layers ?cmdType "general")
 axlCmdRegister("toggle_plane_layers" 'toggle_plane_layers ?cmdType "general")
+axlCmdRegister("toggle_layers" 'toggle_layers ?cmdType "general")
 axlCmdRegister("etch_list" 'etch_list ?cmdType "general")
 
 ;; Alias 'lv' abbreviation from 'Layer Visible'
@@ -180,6 +182,24 @@ axlCmdRegister("lv" 'toggle_number_visible ?cmdType "general")
 ;; Toggle the visibility of all 'PLANE' layers
 (defun toggle_plane_layers ()
   (_toggle_type_layers "PLANE"))
+
+;; Toggle visibility for all layers
+;;  if at least one 'conductor' layer is visible, then all layers are switched to invisible
+;;  (Update the window for use from 'Command' windows)
+(defun toggle_layers ()
+  (let ((visible t)
+        (cond_list (_get_ltype_etch_list "CONDUCTOR"))
+        (plane_list (_get_ltype_etch_list "PLANE")))
+    (foreach layer cond_list
+             (if (_etch_is_visible layer)
+                 (setq visible nil)))
+    (foreach layer cond_list
+             (_set_etch_visible layer visible nil))
+    (foreach layer plane_list
+             (_set_etch_visible layer visible nil))
+    (printf "All layers are %s"
+            (if visible "visible" "invisible")))
+  (axlVisibleUpdate t))
 
 ;; This is for the sake of Emacs.
 ;; Local Variables:
