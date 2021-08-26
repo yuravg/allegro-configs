@@ -113,6 +113,8 @@ funckey ]  toggle_conductor_layers
 funckey ~] toggle_conductor_layers
 funckey \  toggle_plane_layers
 funckey ~\ toggle_plane_layers
+funckey [  toggle_layers
+funckey ~[ toggle_layers
 
 button SCwheel_up subclass --
 button SCwheel_down subclass -+
