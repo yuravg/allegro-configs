@@ -122,6 +122,8 @@ button SCwheel_down subclass -+
 # Shadow layers
 funckey h "shadow toggle"
 
+funckey gt "grid toggle"
+
 # ** Placement
 # Rotate symbol
 funckey rr iangle 90
