@@ -8,10 +8,10 @@
 #  Initial
 #  Cadence Capture setup
 #  Library
-#  View
+#  View (visibility schemes)
 #  Custom shortcuts
 #    Move
-#    Layers
+#    Visibility
 #    Placement
 #    Filter
 #    Find
@@ -70,7 +70,7 @@ set psmpath . symbols $worklib_symbol
 set padpath $worklib_padstacks
 set padpath . symbols $worklib_padstacks
 
-# * View
+# * View (visibility schemes)
 # 'viewpath' - search path for visibility schema files (.color)
 set viewpath $viewpath $HOME/pcbenv/view
 
@@ -88,7 +88,7 @@ button Cwheel_down "roam y $roamInc"
 button Swheel_up "roam x -$roamInc"
 button Swheel_down "roam x $roamInc"
 
-# ** Layers
+# ** Visibility
 
 # SKILL scripts
 # Toggle visibility for Etch layers
