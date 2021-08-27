@@ -1,7 +1,7 @@
 ;;; -*- mode: lisp -*-
 
 ;; SKILL File: etch_visible.il
-;; Version: 20210826.1614
+;; Version: 20210827.0858
 ;; Description: Change the visibility of Etch Cadence Allegro layers
 
 ;; Author  : Yuriy Gritsenko
@@ -97,8 +97,7 @@ axlCmdRegister("lv" 'toggle_number_visible ?cmdType "general")
                                      "PLANE")
                              0)
                          "(plane)"
-                       "")
-                     ))
+                       "")))
     t)) ; 'return t' to prevent message as ("TOP"..."BOTTOM") for run via 'Command> skill etch_list'
 
 ;; Return the name of the Etch layer by serial number in the cross section
@@ -191,7 +190,7 @@ axlCmdRegister("lv" 'toggle_number_visible ?cmdType "general")
 (defun toggle_plane_layers ()
   (_toggle_type_layers "PLANE"))
 
-;; Toggle visibility for all layers
+;; Toggle visibility of all layers
 ;;  if at least one 'conductor' layer is visible, then all layers are switched to invisible
 ;;  (Update the window for use from 'Command' windows)
 (defun toggle_layers ()
