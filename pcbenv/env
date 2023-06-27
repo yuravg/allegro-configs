@@ -8,7 +8,9 @@
 #  Initial
 #  Cadence Capture setup
 #  Library
-#  View (visibility schemes)
+#  View
+#    Visibility schemes
+#    Other
 #  Custom shortcuts
 #    Move
 #    Visibility
@@ -70,9 +72,15 @@ set psmpath . symbols $worklib_symbol
 set padpath $worklib_padstacks
 set padpath . symbols $worklib_padstacks
 
-# * View (visibility schemes)
+# * View
+
+# ** Visibility schemes
 # 'viewpath' - search path for visibility schema files (.color)
 set viewpath $viewpath $HOME/pcbenv/view
+
+# ** Other
+# Disable 'Start Page' Allegro PCB Designer
+set allegro_no_startpage
 
 # * Custom shortcuts
 # NOTE:
