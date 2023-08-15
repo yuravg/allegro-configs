@@ -12,3 +12,7 @@ color -vis "ROUTE KEEPOUT/ALL"
 color -vis "VIA CLASS/TOP"
 color -vis "ANTI ETCH/TOP"
 color -vis "PACKAGE GEOMETRY/PIN_NUMBER"
+
+color -vis "ROUTE KEEPOUT/TOP"
+color -vis "PACKAGE KEEPOUT/TOP"
+color -vis "PACKAGE KEEPOUT/ALL"

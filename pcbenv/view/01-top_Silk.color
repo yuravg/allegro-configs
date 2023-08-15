@@ -10,3 +10,7 @@ color -vis "REF DES/SILKSCREEN_TOP"
 color -vis "PIN/TOP"
 color -vis "VIA CLASS/TOP"
 color -vis "ANTI ETCH/TOP"
+
+color -vis "ROUTE KEEPOUT/TOP"
+color -vis "PACKAGE KEEPOUT/TOP"
+color -vis "PACKAGE KEEPOUT/ALL"
