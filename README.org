@@ -13,6 +13,9 @@ Contents:
 - pcbenv/skill - SKILL script files
   - [[file:pcbenv/skill/etch_visible.il]] - Change the visibility of Etch Cadence Allegro layers
 
+    Using etch_visible.il(keybinding is created with 'funckey' in the [[file:pcbenv/env][env]] file):
+    [[file:images/etch_visible.gif]]
+
 For more information see Cadence Help:
 
 - Getting Started with Physical Design, part: Managing Environment Variables
