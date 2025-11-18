@@ -196,3 +196,4 @@ alias echo_off "scriptmode -echo"
 ### Please do not modify to the end of the file.
 ### Place your hand edits above this section.
 ###
+set allegro_theme = light
