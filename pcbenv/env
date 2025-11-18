@@ -54,6 +54,7 @@ set worklib_symbol $worklib_symbol $worklib_path/Q
 set worklib_symbol $worklib_symbol $worklib_path/R
 set worklib_symbol $worklib_symbol $worklib_path/S
 set worklib_symbol $worklib_symbol $worklib_path/STD
+set worklib_symbol $worklib_symbol $worklib_path/SYMBOLS
 set worklib_symbol $worklib_symbol $worklib_path/T
 set worklib_symbol $worklib_symbol $worklib_path/U
 set worklib_symbol $worklib_symbol $worklib_path/V
@@ -66,10 +67,10 @@ set worklib_padstacks $worklib_path/PADSTACKS/Shape
 set worklib_padstacks $worklib_padstacks $worklib_path/PADSTACKS/Surfase-Mount
 set worklib_padstacks $worklib_padstacks $worklib_path/PADSTACKS/Through-Hole
 
-set psmpath $worklib_symbol
-set psmpath . symbols $worklib_symbol
+# set psmpath $worklib_symbol
+set psmpath . symbols $worklib_symbol $worklib_padstacks
 
-set padpath $worklib_padstacks
+# set padpath $worklib_padstacks
 set padpath . symbols $worklib_padstacks
 
 # * View
