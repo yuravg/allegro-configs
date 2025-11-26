@@ -99,6 +99,11 @@ button Swheel_down "roam x $roamInc"
 
 # ** Visibility
 
+# Toggle 'Enhance Display Mode'
+#  Filled pads (Filled Enable/Filled Disable)
+funckey fd "prmed; setwindow form.prmedit; FORM prmedit display_enhance NO; FORM prmedit apply; FORM prmedit done; setwindow pcb"
+funckey fe "prmed; setwindow form.prmedit; FORM prmedit display_enhance YES; FORM prmedit apply; FORM prmedit done; setwindow pcb"
+
 # SKILL scripts
 # Toggle visibility for Etch layers
 funckey 1 "toggle_number_visible 1"
