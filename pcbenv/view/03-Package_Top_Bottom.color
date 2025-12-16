@@ -1,0 +1,24 @@
+#  View replacement method:
+#  Complete
+
+color -globvis off
+
+color -vis "BOARD GEOMETRY/OUTLINE"
+color -vis "DRC ERROR CLASS/TOP"
+
+color -vis "PACKAGE GEOMETRY/PLACE_BOUND_TOP"
+
+color -vis "ROUTE KEEPOUT/ALL"
+
+color -vis "ROUTE KEEPOUT/TOP"
+color -vis "PACKAGE KEEPOUT/TOP"
+color -vis "PACKAGE KEEPOUT/ALL"
+
+
+color -vis "DRC ERROR CLASS/BOTTOM"
+
+color -vis "PACKAGE GEOMETRY/PLACE_BOUND_BOTTOM"
+
+color -vis "ROUTE KEEPOUT/BOTTOM"
+color -vis "PACKAGE KEEPOUT/BOTTOM"
+color -vis "PACKAGE KEEPOUT/ALL"
